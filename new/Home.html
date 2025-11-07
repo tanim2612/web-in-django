@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FreshVeggies — Organic Vegetables Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="home.js" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">
+          <img src="picture\hand-drawn-flat-design-farmers-market-logo.png" alt="" />
+        </a>
+
+        <input id="search-btn" type="checkbox" />
+        <label for="search-btn">search</label>
+        <input id="search-bar" type="text" placeholder="Search..." />
+
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#catagory">Categories</a>
+          <a href="#products">Shop</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="cart-btn" aria-label="View cart">
+          🧺 <span class="cart-count">0</span>
+        </button>
+        <button class="profile" aria-label="Toggle menu">
+          <span class="menu-icon"><i class="fas fa-caret-down">
+            </i>
+          </span>
+        </button>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-inner container">
+          <div class="hero-text">
+            <h1>Fresh. Local. Delicious.</h1>
+            <p>
+              Organic vegetables delivered from nearby farms — picked fresh,
+              shipped fast.
+            </p>
+            <a class="cta" href="#products">Browse Vegetables</a>
+          </div>
+          <div class="hero-illustration" aria-hidden="true">
+            <!-- decorative floating vegetables -->
+            <div
+              class="veg v1"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=60');
+              "
+            ></div>
+            <div
+              class="veg v2"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1506808547685-e2ba962dedf7?auto=format&fit=crop&w=800&q=60');
+              "
+            ></div>
+            <div
+              class="veg v3"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?auto=format&fit=crop&w=800&q=60');
+              "
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!--Catagory-->
+
+      <section id="catagory" class="catagory container">
+        <h2>Vegetable Categories</h2>
+        <a href="#">Leafy Greens</a> |
+        <a href="#">Root Vegetables</a> |
+        <a href="#">Cruciferous</a> |
+        <a href="#">Nightshades</a> |
+        <a href="#">Fruits</a> |
+        <a href="#">All Categories</a>
+      </section>
+
+
+      <!-- ABOUT -->
+      <section id="about" class="about container">
+        <h2>About FreshVeggies</h2>
+        <p>
+          We partner with small farms to bring you produce that’s seasonal,
+          pesticide-free, and nutrient-dense. Our goal: healthier plates and
+          happier farmers.
+        </p>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section id="products" class="products">
+        <div class="container">
+          <h2>Shop Farmer's Market</h2>
+          <p class="sub">
+            Click <strong>Buy Now</strong> to order — a prefilled email will
+            open so you can confirm quantities & delivery.
+          </p>
+
+          <div class="product-grid">
+            <!-- Product 1 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Tomatoes</h3>
+                <p class="product-desc">
+                  Ripe vine tomatoes — sweet, juicy, perfect for salads.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 120 / kg</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Tomatoes&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Tomatoes.%20Quantity%3A%20____%20kg.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1506808547685-e2ba962dedf7?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Carrots</h3>
+                <p class="product-desc">
+                  Crunchy carrots full of beta-carotene — great for snacks &
+                  soups.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 90 / kg</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Carrots&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Carrots.%20Quantity%3A%20____%20kg.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Broccoli</h3>
+                <p class="product-desc">
+                  Fresh broccoli florets — steamed, roasted or stir-fried.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 160 / kg</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Broccoli&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Broccoli.%20Quantity%3A%20____%20kg.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1582515073490-399813b29111?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Spinach</h3>
+                <p class="product-desc">
+                  Leafy green spinach — ideal for soups, smoothies, and curries.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 70 / bunch</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Spinach&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Spinach.%20Quantity%3A%20____%20bunch.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1592928304082-0a5504e49e8f?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Eggplant</h3>
+                <p class="product-desc">
+                  Soft-skinned eggplants — great for roasted dishes and stews.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 110 / kg</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Eggplant&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Eggplant.%20Quantity%3A%20____%20kg.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="card">
+              <div
+                class="card-media"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1518976024611-56f0b5699a6b?auto=format&fit=crop&w=900&q=60');
+                "
+              ></div>
+              <div class="card-body">
+                <h3 class="product-title">Bell Peppers</h3>
+                <p class="product-desc">
+                  Colorful bell peppers — sweet and crunchy.
+                </p>
+                <div class="card-footer">
+                  <span class="price">৳ 200 / kg</span>
+                  <a
+                    class="buy-btn"
+                    href="mailto:orders@freshveggies.com?subject=Order%20-%20Bell%20Peppers&body=Hi%20FreshVeggies%2C%0A%0AI%20would%20like%20to%20order%20Bell%20Peppers.%20Quantity%3A%20____%20kg.%0A%0AName%3A%20%0APhone%3A%20%0AAddress%3A%20%0A%0AThanks!"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact container">
+        <h2>Contact & Delivery</h2>
+        <p>
+          Email:
+          <a href="mailto:orders@freshveggies.com">orders@freshveggies.com</a> •
+          Phone: +880 1234 567 890
+        </p>
+        <p>
+          Delivery within Dhaka: 1–2 business days. Nationwide delivery
+          available on request.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> FreshVeggies — Healthy food, happy people.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // tiny script only to update year (optional). If you prefer zero-JS, remove this block.
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
