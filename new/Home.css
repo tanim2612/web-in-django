@@ -1,18 +1,12 @@
 /* =========================
    FreshVeggies — style.css
    Colorful + animated shopping layout
-   ========================= */
-
-
-/* --- Reset & global --- */
+========================= */
 
 :root {
     --accent-1: #37b24d;
-    /* green */
     --accent-2: #ffd166;
-    /* yellow */
     --accent-3: #4cc9f0;
-    /* sky */
     --bg: linear-gradient(120deg, #f6ffed 0%, #e8fbff 100%);
     --card-shadow: 0 10px 25px rgba(13, 40, 19, 0.08);
     --glass: rgba(255, 255, 255, 0.6);
@@ -20,38 +14,27 @@
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%
-}
-
-body {
+    height: 100%;
     margin: 0;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family: Inter, ui-sans-serif, system-ui;
     background: var(--bg);
     color: #153b2e;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     line-height: 1.45;
-    -webkit-font-variant-ligatures: none;
-    font-variant-ligatures: none;
 }
 
-
-/* --- container --- */
-
+/* --- Container --- */
 .container {
     width: 92%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
-/* --- header --- */
-
+/* --- Header --- */
 .site-header {
     position: sticky;
     top: 0;
@@ -68,83 +51,28 @@ body {
     padding: 14px 0;
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--accent-1);
-    text-decoration: none;
-}
-
 .logo img {
     height: 80px;
     width: auto;
-    vertical-align: middle;
     margin-right: 8px;
 }
 
-
-/* 🔍 Search Toggle Section */
-.search-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-}
-
-.search-toggle,
-.toggle-label {
-    background: white;
-    color: #4CAF50;
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s, opacity 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.search-toggle:hover {
-    background: #c7f3c7;
-}
-
-/* Search input styling */
+/* --- Search --- */
 #search-bar {
     width: 0;
-    /* start collapsed */
     padding: 0;
-    /* remove padding when hidden */
     border: 2px solid #4CAF50;
     border-radius: 6px;
     outline: none;
     transition: width 0.4s, padding 0.4s;
-    /* smooth expansion */
-    display: inline-block;
 }
 
-#search-bar:focus {
-    border-color: #37b24d;
-    box-shadow: 0 0 8px rgba(55, 178, 77, 0.3);
-}
-
-/* ✅ Show search bar and hide toggle text when checkbox is checked */
 #search-btn:checked~#search-bar {
     width: 200px;
-    /* expand width */
     padding: 6px 10px;
-    /* add padding */
 }
 
-#search-btn:checked+.toggle-label {
-    opacity: 0;
-    /* fade out label */
-    pointer-events: none;
-    /* prevent clicks */
-}
-
-/* nav */
-
+/* --- Nav --- */
 .nav {
     margin-left: auto;
     display: flex;
@@ -158,7 +86,7 @@ body {
     font-weight: 600;
     padding: 8px 10px;
     border-radius: 8px;
-    transition: transform .22s ease, background .22s ease;
+    transition: transform .22s, background .22s;
 }
 
 .nav a:hover {
@@ -166,9 +94,7 @@ body {
     background: rgba(255, 255, 255, 0.6);
 }
 
-
-/* cart */
-
+/* --- Cart/Profile buttons --- */
 .cart-btn {
     margin-left: 12px;
     background: linear-gradient(135deg, var(--accent-2), #ffd699);
@@ -185,14 +111,79 @@ body {
     margin-left: 6px;
 }
 
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 280px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-/* --- hero --- */
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+.cart-dropdown li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.cart-dropdown h3 {
+    margin-top: 0;
+}
+
+.cart-total {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.profile {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+/* Profile dropdown */
+#profileMenu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    width: 200px;
+    z-index: 100;
+}
+
+#profileMenu a {
+    display: block;
+    padding: 10px;
+    color: #234f3a;
+    text-decoration: none;
+}
+
+#profileMenu a:hover {
+    background: #f0f0f0;
+}
+
+/* --- Hero --- */
 .hero {
     padding: 60px 0 40px;
     display: flex;
     align-items: center;
-    position: relative;
     overflow: visible;
 }
 
@@ -204,14 +195,10 @@ body {
     padding: 20px 0 60px;
 }
 
-
-/* hero text */
-
 .hero-text h1 {
     font-size: 2.4rem;
     line-height: 1.05;
     margin-bottom: 12px;
-    letter-spacing: -0.5px;
     color: #073b2d;
     animation: slideIn 900ms ease both;
 }
@@ -231,7 +218,6 @@ body {
     text-decoration: none;
     font-weight: 700;
     box-shadow: 0 12px 30px rgba(41, 128, 67, .12);
-    transform: translateY(0);
     transition: transform .25s ease, box-shadow .25s ease, filter .25s;
 }
 
@@ -240,9 +226,7 @@ body {
     filter: brightness(1.03);
 }
 
-
-/* hero illustration - floating veggies */
-
+/* --- Hero illustration floating veggies --- */
 .hero-illustration {
     position: relative;
     height: 320px;
@@ -256,9 +240,9 @@ body {
     background-size: cover;
     background-position: center;
     box-shadow: 0 12px 30px rgba(4, 28, 12, 0.12);
+    border: 6px solid rgba(255, 255, 255, 0.55);
     transform-origin: center;
     animation: float 6s ease-in-out infinite;
-    border: 6px solid rgba(255, 255, 255, 0.55);
 }
 
 .veg.v1 {
@@ -302,9 +286,7 @@ body {
     }
 }
 
-
-/* --- sections --- */
-
+/* --- Sections --- */
 .catagory {
     padding: 40px 0;
     text-align: center;
@@ -325,14 +307,6 @@ body {
     text-decoration: underline;
 }
 
-.catagory .active {
-    text-decoration: underline;
-    font-weight: 700;
-}
-
-
-/* --- about --- */
-
 .about {
     text-align: center;
     padding: 40px 0 24px;
@@ -349,9 +323,7 @@ body {
     color: #175036;
 }
 
-
-/* --- products --- */
-
+/* Products */
 .products {
     padding: 28px 0 60px;
 }
@@ -369,18 +341,12 @@ body {
     color: #2b5f45;
 }
 
-
-/* grid */
-
 .product-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 18px;
 }
-
-
-/* product card */
 
 .card {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
@@ -400,9 +366,6 @@ body {
     box-shadow: 0 18px 40px rgba(20, 80, 40, 0.12);
 }
 
-
-/* image area */
-
 .card-media {
     height: 190px;
     background-size: cover;
@@ -417,9 +380,6 @@ body {
     transform: scale(1.06);
     filter: saturate(1.05);
 }
-
-
-/* body */
 
 .card-body {
     padding: 18px 16px;
@@ -441,9 +401,6 @@ body {
     flex: 1;
 }
 
-
-/* footer row */
-
 .card-footer {
     display: flex;
     gap: 12px;
@@ -462,9 +419,6 @@ body {
     border: 1px solid rgba(6, 30, 15, 0.04);
 }
 
-
-/* buy button */
-
 .buy-btn {
     text-decoration: none;
     background: linear-gradient(135deg, var(--accent-3), var(--accent-1));
@@ -481,9 +435,7 @@ body {
     box-shadow: 0 18px 36px rgba(76, 201, 240, 0.18);
 }
 
-
-/* --- footer --- */
-
+/* Footer */
 .site-footer {
     background: linear-gradient(180deg, #eaf9ee, #e5f5ff);
     padding: 20px 0;
@@ -492,10 +444,8 @@ body {
     border-top: 1px solid rgba(6, 30, 15, 0.03);
 }
 
-
-/* --- small screens --- */
-
-@media (max-width: 1000px) {
+/* Small screens */
+@media(max-width:1000px) {
     .hero-inner {
         grid-template-columns: 1fr 320px;
     }
@@ -505,7 +455,7 @@ body {
     }
 }
 
-@media (max-width: 720px) {
+@media(max-width:720px) {
     .hero-inner {
         grid-template-columns: 1fr;
     }
@@ -536,9 +486,6 @@ body {
     }
 }
 
-
-/* small motion: entrance */
-
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -550,3 +497,5 @@ body {
         transform: translateY(0);
     }
 }
+
+/* End of FreshVeggies style.css */

@@ -1,44 +1,90 @@
-// --- Search Bar Auto-Focus ---
-const searchCheckbox = document.getElementById("search-btn");
-const searchBar = document.getElementById("search-bar");
+// Update year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-searchCheckbox.addEventListener("change", () => {
-  if (searchCheckbox.checked) {
-    searchBar.focus();
+// Profile dropdown
+const profileBtn = document.querySelector(".profile");
+const menu = document.getElementById("profileMenu");
+profileBtn.addEventListener("click", () => {
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+window.addEventListener("click", (e) => {
+  if (!profileBtn.contains(e.target) && !menu.contains(e.target)) {
+    menu.style.display = "none";
   }
 });
 
-// --- Category Filter ---
-const categories = ["All", "Root", "Leafy", "Fruit"];
-const categoryList = document.getElementById("category-list");
-const products = document.querySelectorAll("#product-grid .product-card");
-
-// Create category buttons
-categories.forEach(cat => {
-  const btn = document.createElement("button");
-  btn.textContent = cat;
-  if(cat === "All") btn.classList.add("active");
-
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".category-list button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    filterProducts();
-  });
-
-  categoryList.appendChild(btn);
+// Mobile nav toggle
+const mobileToggle = document.querySelector(".mobile-nav-toggle");
+const nav = document.querySelector(".nav");
+mobileToggle.addEventListener("click", () => {
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.style.flexDirection = "column";
 });
 
-// --- Live Search ---
-searchBar.addEventListener("input", filterProducts);
-
-// --- Combined Filter Function ---
-function filterProducts() {
-  const searchValue = searchBar.value.toLowerCase();
-  const activeCategory = document.querySelector(".category-list button.active")?.textContent || "All";
-
-  products.forEach(p => {
-    const matchCategory = (activeCategory === "All" || p.dataset.category.toLowerCase() === activeCategory.toLowerCase());
-    const matchSearch = p.querySelector("h3").textContent.toLowerCase().includes(searchValue);
-    p.style.display = matchCategory && matchSearch ? "block" : "none";
+// Optional: Close nav on link click (for mobile)
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    if(window.innerWidth <= 720) nav.style.display = "none";
   });
+});
+
+
+
+
+
+
+
+// HTML elements
+const cartBtn = document.getElementById("openCart");
+const cartDropdown = document.getElementById("cartDropdown");
+const cartCount = document.querySelector(".cart-count");
+const cartItemsList = document.querySelector(".cart-items");
+const cartTotal = document.querySelector(".cart-total");
+
+// Toggle cart dropdown
+cartBtn.addEventListener("click", () => {
+  cartDropdown.style.display =
+    cartDropdown.style.display === "block" ? "none" : "block";
+});
+
+// Add item to cart
+document.querySelectorAll(".add-cart").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const product = {
+      id: btn.dataset.id,
+      name: btn.dataset.name,
+      price: Number(btn.dataset.price)
+    };
+
+    cart.push(product);
+    updateCartUI();
+  });
+});
+
+// Update cart UI
+function updateCartUI() {
+  cartItemsList.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item) => {
+    total += item.price;
+
+    const li = document.createElement("li");
+    li.textContent = `${item.name} — $${item.price}`;
+    cartItemsList.appendChild(li);
+  });
+
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = `Total: $${total}`;
 }
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  if (!cartBtn.contains(e.target) && !cartDropdown.contains(e.target)) {
+    cartDropdown.style.display = "none";
+  }
+});
+
+
+/* --- End of Home.js --- */
